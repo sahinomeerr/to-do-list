@@ -30,6 +30,15 @@ list.addEventListener('click', function(e){
     }
 });
 
+inputBox.addEventListener("keypress", (e) => {
+    if (e.key === "Enter" && inputBox.value !== "") {
+      addTask();
+    }
+    else if (e.key === "Enter" && inputBox.value === "") {
+      alert("Please enter a task");
+    }
+  });
+
 function saveData(){
     localStorage.setItem('data', list.innerHTML);
 }
